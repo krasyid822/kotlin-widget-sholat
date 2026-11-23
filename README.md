@@ -1,3 +1,5 @@
+<img width="72" height="160" alt="image" src="https://github.com/user-attachments/assets/22c8105f-2020-4da8-a34e-aa62a07bd34d" /><img width="72" height="160" alt="image" src="https://github.com/user-attachments/assets/fbed4fd2-9305-4fe4-a430-83e4a549bab7" />
+
 ## Download kebutuhan Gradle
 ```bash
 /home/rasyidk/.gradle/wrapper/dists/gradle-9.8.2-bin/8wepis63pzuhrlfaiy04bagwu/gradle-9.8.2/bin/gradle testDebugUnitTest assembleDebug --no-daemon running
