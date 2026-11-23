@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Widget Sholat</string>
+    <string name="widget_description">Jadwal sholat luring dengan hitung mundur Syuruq 7 hasta</string>
+    <string name="analog_widget_label">Widget Sholat Analog</string>
+    <string name="analog_widget_description">Jam analog 12 angka dengan penanda waktu sholat menempel di lingkaran jam</string>
+</resources>

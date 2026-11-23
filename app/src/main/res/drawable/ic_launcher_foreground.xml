@@ -1,0 +1,50 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Subtle dial ring within 66dp safe zone (radius 27dp around center 54,54) -->
+    <path
+        android:fillColor="#181B20"
+        android:pathData="M54,54m-27,0a27,27 0,1 1,54 0a27,27 0,1 1,-54 0"
+        android:strokeWidth="2.5"
+        android:strokeColor="#334155" />
+
+    <!-- Emerald prayer window arc (from 12 o'clock to 4 o'clock) -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,27 A27,27 0 0,1 77.38,67.5"
+        android:strokeWidth="4.2"
+        android:strokeColor="#34D399"
+        android:strokeLineCap="round" />
+
+    <!-- Syuruq accent arc (around 6 o'clock) -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M60.99,80.08 A27,27 0 0,1 47.01,80.08"
+        android:strokeWidth="4.2"
+        android:strokeColor="#FF5252"
+        android:strokeLineCap="round" />
+
+    <!-- Hour hand (pointing ~10 o'clock) -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,54 L44,42"
+        android:strokeWidth="3.2"
+        android:strokeColor="#FFFFFF"
+        android:strokeLineCap="round" />
+
+    <!-- Minute hand (pointing ~2 o'clock) -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M54,54 L67,43"
+        android:strokeWidth="2.2"
+        android:strokeColor="#E2E8F0"
+        android:strokeLineCap="round" />
+
+    <!-- Center pivot -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,54m-2.8,0a2.8,2.8 0,1 1,5.6 0a2.8,2.8 0,1 1,-5.6 0" />
+</vector>
