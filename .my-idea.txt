@@ -1,1 +1,2 @@
 mulai konfigurasi signingConfigs.
+jalankan review code, terutama memastikan aplikasi tidak menguras baterai tidak terbunuh dan bisa bangkit dari kematian

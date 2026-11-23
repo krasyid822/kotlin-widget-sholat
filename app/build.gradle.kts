@@ -1,9 +1,27 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
 }
+
+val keystoreProperties = Properties().apply {
+    val keystoreFile = rootProject.file("keystore.properties")
+    if (keystoreFile.exists()) {
+        keystoreFile.inputStream().use { load(it) }
+    }
+}
+
+val releaseStoreFile: String? = keystoreProperties.getProperty("storeFile")
+    ?: System.getenv("RELEASE_STORE_FILE")
+val releaseStorePassword: String? = keystoreProperties.getProperty("storePassword")
+    ?: System.getenv("RELEASE_STORE_PASSWORD")
+val releaseKeyAlias: String? = keystoreProperties.getProperty("keyAlias")
+    ?: System.getenv("RELEASE_KEY_ALIAS")
+val releaseKeyPassword: String? = keystoreProperties.getProperty("keyPassword")
+    ?: System.getenv("RELEASE_KEY_PASSWORD")
 
 android {
     namespace = "com.widgetsholat.app"
@@ -19,9 +37,25 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        if (!releaseStoreFile.isNullOrBlank() &&
+            !releaseStorePassword.isNullOrBlank() &&
+            !releaseKeyAlias.isNullOrBlank() &&
+            !releaseKeyPassword.isNullOrBlank()
+        ) {
+            create("release") {
+                storeFile = file(releaseStoreFile)
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.findByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
